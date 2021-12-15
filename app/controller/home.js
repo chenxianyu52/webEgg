@@ -5,7 +5,10 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'hi, egg';
+    const result = await ctx.curl('https://api.oick.cn/lishi/api.php');
+    ctx.status = result.status;
+    ctx.set(result.headers);
+    ctx.body = result.data;
   }
 }
 
