@@ -10,7 +10,19 @@ module.exports = appInfo => {
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
-  const config = exports = {};
+  const config = exports = {
+    mysql:{
+      client:{
+        host:'127.0.0.1',
+        port:'3306',
+        user:'root',
+        password:'Loveaini0714',
+	database:'test'
+      },
+      app:true,
+      agent:false,
+    }
+  };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1639470452728_4885';
